@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "build:github": "ng build --output-path dist --base-href ./ && mkdir -p docs && cp -r dist/* docs && sed -i '' 's|<base href=\"/\">|<base href=\"./\">|' docs/index.html && rm -rf dist"
   },
   "private": true,
   "dependencies": {
